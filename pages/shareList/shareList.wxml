@@ -1,0 +1,47 @@
+<!--pages/shareList/shareList.wxml-->
+<view class='shareList'>
+  <scroll-view scroll-x="true" class="tab-h" scroll-left="{{scrollLeft}}">
+    <view class="tab-item {{currentTab==0?'active':''}}" data-current="0" bindtap="swichNav">
+      <image src='../../images/user/shaidan1.png'></image>
+      我的晒单</view>
+    <view class="tab-item {{currentTab==1?'active':''}}" data-current="1" bindtap="swichNav">
+      <image src='../../images/user/shaidan2.png'></image>
+      晒单广场</view>
+  </scroll-view>
+  <swiper class="tab-content" current="{{currentTab}}" duration="300" bindchange="switchTab" style="height:{{winHeight}}rpx">
+    <swiper-item wx:for="{{[0,1]}}" wx:key="{{item}}">
+      <scroll-view scroll-y="true" class="scoll-h">
+        <!-- <block wx:for="{{[1,2,3,4,5,6,7,8]}}" wx:key="*this">
+                    <view class='list'>
+                        <view class='time'>2017-12-28</view>
+                        <view class='des'>2343543546</view>
+                        <view class='imgList'>
+                          <image src='../../images/product.png'></image>
+                        </view>
+                    </view>
+                </block> -->
+        <block wx:for="{{list}}" wx:key="*this">
+          <view class='list'>
+            <view class='user_info'>
+              <image src='{{item.wechat_head_image}}' class='pic' wx:if="{{currentTab == 1}}"></image>
+              <view>
+                <view class='name' wx:if="{{currentTab == 1}}">{{item.wechat_nickname}}</view>
+                <view class='time'>{{item.create_time}}</view>
+              </view>
+            </view>
+            <view class='des'>{{item.evaluate_detail}}</view>
+            <view class='imgList'>
+              <image src='{{item.image}}' wx:for="{{item.evaluate_url}}" wx:key="{{item}}"></image>
+            </view>
+          </view>
+        </block>
+      </scroll-view>
+    </swiper-item>
+  </swiper>
+  <view style='height:140rpx;'></view>
+  <view class='all_btn' catchtap='toShare'>
+    <button type="warn" bindtap="warn">去晒单</button>
+  </view>
+
+
+</view>

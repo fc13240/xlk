@@ -1,0 +1,53 @@
+/* pages/myTracks/myTracks.wxss */
+.list{
+  
+}
+.date{
+  font-size: 20rpx;
+  color: rgb(153, 153, 153);
+  line-height: 60rpx;
+  padding: 0 30rpx;
+}
+.goods_list{
+  padding: 22rpx 30rpx;
+  border-bottom: 1rpx solid #f4f4f4;
+  background-color: white;
+  display: -webkit-flex; /* Safari */
+  display: flex;
+  justify-content: flex-start;
+
+}
+.goods_list image{
+  width: 240rpx;
+  height: 224rpx;
+  flex-shrink: 0;
+}
+.right{
+  flex-shrink: 2;
+  padding: 0 22rpx;
+  position: relative;
+}
+.right_name{
+  height: 80rpx;
+    overflow: hidden;
+    font-size: 28rpx;
+    color: #333;
+}
+.right_num{
+  font-size: 24rpx;
+  color: rgb(153, 153, 153);
+}
+.right_p{
+  font-size: 36rpx;
+  color: #ff426f;
+}
+.right_bottom{
+  position: absolute;
+  bottom: 0;
+}
+.tip{
+  font-size: 24rpx;
+    color: rgb(153, 153, 153);
+    text-align: center;
+    padding: 50rpx 0;
+}

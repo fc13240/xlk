@@ -1,0 +1,168 @@
+/**index.wxss**/
+page{
+  background-color: #f4f4f4;
+  width:100%;
+  padding: 0rpx;
+  margin: 0rpx;
+}
+.nav-search{
+  position:absolute;top:20rpx;
+  width: 100%;
+  height: 64rpx;
+  text-align: center;
+}
+.nav-search>image{
+  width: calc(100% - 60rpx);
+  height: 100%;
+}
+.tab{
+  display: flex; align-items: center; justify-content: center;height:86rpx;background:white;
+}
+.tab-item{
+  width: calc(100% / 3);
+  font-size: 28rpx;
+  color: #333;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  position: relative;
+  z-index: 999999; 
+}
+.tab-icon{
+  width: 36rpx;
+  height: 36rpx;
+  margin-right: 14rpx;
+}
+.tab-item.active{
+  color: white;
+  background: -webkit-linear-gradient(left, #8721b5, #db3283);
+		/* Safari 5.1 - 6.0 */
+		background: -o-linear-gradient(left, #8721b5, #db3283);
+		/* Opera 11.1 - 12.0 */
+		background: -moz-linear-gradient(left, #8721b5, #db3283);
+		/* Firefox 3.6 - 15 */
+		background: linear-gradient(left, #8721b5, #db3283);
+		/* 标准的语法 */
+}
+.tab-item.active::after{
+  width: 0rpx;
+  height: 0rpx;
+  border:8rpx solid transparent;
+  border-bottom: 8rpx solid white;
+  position: absolute;
+  content: '';
+  bottom: 0;
+  left: calc((100% - 16rpx)/2);
+}
+ .scroll_box{
+  background: white;
+  font-size: 30rpx;
+  color: #333;
+  height: 90rpx;
+  white-space: nowrap;
+  box-shadow: 0rpx 4rpx 13rpx 0rpx #f1f0f0 inset;
+}
+.goods-type{
+  height: 100%;
+}
+.item_list{
+  height: 100%;
+  display: inline-block;
+  
+} 
+.item_list>view{
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.item_list{
+  padding: 0 20rpx;
+}
+.type-active>view{
+  color: #d13089;
+  padding: 0 10rpx;
+  border-bottom: 6rpx solid #d13089;
+  box-sizing: border-box;
+}
+.item-ans {
+  font-size: 0;
+  width: 100%;
+  display: flex;
+  flex-grow: row no-wrap;
+  justify-content: space-between;
+  padding: 20rpx 26rpx 40rpx 30rpx;
+  box-sizing: border-box;
+  align-items: flex-start;
+  border-bottom: 2rpx solid #f4f4f4;
+
+}
+
+.avatar {
+  width: 230rpx;
+  height: 230rpx;
+  padding-right: 24rpx;
+}
+
+.avatar .img {
+   width: 230rpx;
+  height: 230rpx;
+  border-radius: 8rpx;
+}
+.expertInfo {
+  flex-grow: 2;
+  height: 230rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.expertInfo .name {
+  font-size: 28rpx;
+  color: #333;
+  height: 50rpx;
+  line-height: 50rpx;
+  overflow: hidden;
+}
+.tab-content {
+  background: white;
+}
+.old_price{
+  font-size: 24rpx;
+    color: #999;
+    margin-left: 10rpx;
+    text-decoration: line-through;
+}
+.des{
+  display:flex;align-items:flex-end;
+  justify-content: space-between;
+}
+.btn{
+  border-radius: 8rpx;
+    width: 130rpx;
+    font-size: 24rpx;
+    color: #fff;
+    background-color: #f51d46;
+    line-height: 56rpx;
+    text-align: center;
+}
+.share-income{
+   font-size: 20rpx;
+   color: white;
+   display: inline-block;
+   padding: 0 16rpx;
+   border-radius: 16rpx;
+   height: 32rpx;
+   line-height: 32rpx;
+   background: -webkit-linear-gradient(left, #f51d46, #fe6d13);
+		/* Safari 5.1 - 6.0 */
+		background: -o-linear-gradient(left, #8721b5, #db3283);
+		/* Opera 11.1 - 12.0 */
+		background: -moz-linear-gradient(left, #8721b5, #db3283);
+		/* Firefox 3.6 - 15 */
+		background: linear-gradient(left, #8721b5, #db3283);
+		/* 标准的语法 */
+}
+
+

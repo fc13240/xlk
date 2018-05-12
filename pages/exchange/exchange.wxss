@@ -1,0 +1,129 @@
+/* pages/exchange/exchange.wxss */
+.goods{
+  padding: 20rpx 30rpx 0;
+  background-color: white;
+  border-top: 1rpx solid #f4f4f4;
+  margin-bottom: 20rpx;
+}
+.des{
+  margin: 0 auto;
+    padding: 24rpx 18rpx 0;
+    border-width: 6rpx 1rpx 2rpx;
+    border-style: solid;
+    border-color: #ff526d #e9e9e9 #e9e9e9;
+    border-radius: 8rpx;
+}
+.des_main{
+  display: flex;
+  align-items: center;
+}
+.goods_img{
+  width: 150rpx;
+    height: 100rpx;
+    vertical-align: middle;
+    margin-right: 20rpx;
+}
+.goods_name{
+  font-size: 32rpx;
+  color: #333;
+}
+.icon{
+  width: 26rpx;
+  height: 20rpx;
+  margin: 0 10rpx;
+}
+.goods_acer{
+  font-size: 36rpx;
+    color: #ff425f;
+}
+.goods_old_p{
+  font-size: 24rpx;
+  color: rgb(153, 153, 153);
+  text-decoration: line-through;
+}
+.tip{
+  font-size: 24rpx;
+    border-top: 1rpx dashed #ff526d;
+    margin-top: 15rpx;
+    color: #999;
+    line-height: 50rpx;
+}
+.tip text{
+  color: #ff425f;
+}
+.setNum_title{
+  font-size:24rpx;
+  color: rgb(102, 102, 102);
+}
+.setNum_main{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20rpx 0; 
+  border-bottom: 1px solid rgb(233, 233, 233);
+}
+.setNum{
+  display: flex;
+  justify-content: space-between;
+  border:1rpx solid #b1b1b1;
+  height: 52rpx;
+  border-radius: 10rpx;
+}
+.setNum .btn{
+  width: 56rpx;
+  height: 52rpx;
+  background: #e1e1e1;
+  color: #878787;
+  text-align: center;
+}
+.userInfo{
+  padding: 30rpx 0;
+}
+.tel{
+  border: 1rpx solid rgb(177, 177, 177);
+    border-radius: 5rpx;
+    width: 450rpx;
+    margin: 20rpx 0px 10rpx;
+    font-size: 24rpx;
+    padding: 0 20rpx;
+}
+.direction{
+  background-color: white;
+  padding: 20rpx 30rpx;
+}
+.title{
+  font-size: 28rpx;
+  color: #333;
+  padding: 20rpx 0;
+  font-weight: bolder;
+}
+.brief{
+  font-size: 24rpx;
+  color: rgb(153, 153, 153)
+}
+.name{
+  font-size: 28rpx;
+  color: #333;
+}
+.address{
+  font-size: 24rpx;
+  border: 1rpx solid rgb(244, 244, 244);
+  width: 580rpx;
+  margin: 15rpx auto 0;
+  padding: 26rpx 30rpx;
+  display: flex;
+  align-items: flex-start;
+}
+.default{
+   width: 60rpx;
+  margin-right: 24rpx;
+  padding: 1rpx 0rpx;
+  color: #ff425f;
+  border: 1rpx solid #ff425f;
+  text-align: center;
+  border-radius: 5rpx;
+}
+.site{
+  color: rgb(102, 102, 102);
+  margin-bottom: 10rpx;
+}

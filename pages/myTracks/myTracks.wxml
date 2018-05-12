@@ -1,0 +1,19 @@
+<!--pages/myTracks/myTracks.wxml-->
+<view class='myTracks'>
+   <view class='list' wx:for='{{footPrint}}' wx:key='{{index}}'>
+      <view class='date'>{{index}}</view>
+       <view class='goods_list' wx:for="{{item.object}}" wx:for-item='ite'>
+          <image src='{{ite.pict_url}}'></image>
+          <view class='right'>
+             <view class='right_name'>{{ite.title}}</view>
+            <view class='right_bottom'>
+             <view class='right_num'>已售{{ite.volume}}件</view>
+             <view class='right_p'><text style='font-size:24rpx;'>￥</text><text>{{ite.reserve_price.rmb}}</text><text style='font-size:24rpx;'>.{{ite.reserve_price.corner}}</text></view></view>
+          </view>
+       </view>
+   </view>
+   <view class='tip'>已经到底了，快去挑几件好货吧~</view>
+ <view class='all_btn'>
+    <button bindtap="cleadMyTracks">清空</button>
+  </view>
+</view>

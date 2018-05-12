@@ -1,0 +1,30 @@
+<!--pages/share/share.wxml-->
+<view class='share'>
+  <form bindsubmit="formSubmit">
+    <view class='main'>
+      <textarea placeholder="说说你的晒单感受吧~" name='content' value='{{content}}' />
+      <view>
+        <view style='display:inline-block;position:relative;' wx:for="{{imgs}}" wx:key="{{imgs}}">
+          <image class='img' src='{{item}}'></image>
+          <image class='del' src='../../images/cancel_img.png' catchtap='delImageTap' data-id='{{index}}'></image>
+        </view>
+        <image catchtap='chooseImageTap' src='../../images/upload.png' class='img'></image>
+      </view>
+    </view>
+    <view>
+      <view class='order-num'>订单号
+        <input placeholder='请输入订单号' name='orderNum' value='{{orderNum}}'></input>
+      </view>
+    </view>
+    <view class='bottom'>
+      <view class='tip'>
+        <image src='../../images/litter_sanjiao.png' class='icon'></image>晒单说明
+      </view>
+      <view class='brief'>{{shareContent}}</view>
+    </view>
+    <view style='height:140rpx;'></view>
+    <view class='all_btn'>
+      <button formType="submit" class='warn'>发布</button>
+    </view>
+  </form>
+</view>

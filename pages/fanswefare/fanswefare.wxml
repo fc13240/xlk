@@ -1,0 +1,115 @@
+<!--pages/fanswefare/fanswefare.wxml-->
+<view class='fanswefare'>
+  <view>
+    <image src='{{banner}}' class='nav'></image>
+  </view>
+  <scroll-view scroll-x="true" class="tab-h" scroll-left="{{scrollLeft}}">
+    <view wx:for='{{sortList}}' wx:key='index' class="tab-item {{currentTab==index?'active':''}}" data-current="{{index}}" data-type='{{item.id}}' bindtap="swichNav">{{item.sort_name}}</view>
+  </scroll-view>
+  <swiper class="tab-content"  current="{{currentTab}}" duration="300" bindchange="switchTab" style="height:{{winHeight}}rpx">
+    <swiper-item>
+      <scroll-view scroll-y="true" class="scoll-h" scroll-top="{{scrollTop}}" bindscrolltolower="lower" lower-threshold="0">
+        <block wx:for="{{goodsList1}}" wx:key="{{item}}">
+          <view class='product_child' catchtap='toGoodsDetail' data-id='{{item.id}}'>
+            <image src='http:{{item.pict_url}}'></image>
+            <view class='product_name'>
+              <text class='name_text break'>{{item.title}}</text>
+              <view style="margin: 15rpx 0;">
+                <text class="juan_style">
+               <text class="juan_style_left">券</text>
+                <text class="juan_style_right">{{item.coupon_number}}元</text>
+                </text>
+                <text class="return_num_style" wx:if="{{item.fans_acer!=='0'}}">返{{item.fans_acer}}元宝</text>
+              </view>
+              <view>
+                <text class='price'>￥</text>
+                <text class='rmb'>{{item.zk_final_price.rmb}}</text>
+                <text class='corner' hidden='{{item.zk_final_price.corner == 00 ? "true" : "false"}}'>.{{item.zk_final_price.corner}}</text>
+                <text class='volumn'>{{item.volume}}件已售</text>
+              </view>
+            </view>
+          </view>
+        </block>
+      </scroll-view>
+      </swiper-item>
+      <swiper-item>
+      <scroll-view scroll-y="true" class="scoll-h" scroll-top="{{scrollTop}}" bindscrolltolower="lower" lower-threshold="0">
+        <block wx:for="{{goodsList2}}" wx:key="{{item}}">
+          <view class='product_child' catchtap='toGoodsDetail' data-id='{{item.id}}'>
+            <image src='http:{{item.pict_url}}'></image>
+            <view class='product_name'>
+              <text class='name_text break'>{{item.title}}</text>
+              <view style="margin: 15rpx 0;">
+                <text class="juan_style">
+               <text class="juan_style_left">券</text>
+                <text class="juan_style_right">{{item.coupon_number}}元</text>
+                </text>
+                <text class="return_num_style" wx:if="{{item.fans_acer!=='0'}}">返{{item.fans_acer}}元宝</text>
+              </view>
+              <view>
+                <text class='price'>￥</text>
+                <text class='rmb'>{{item.zk_final_price.rmb}}</text>
+                <text class='corner' hidden='{{item.zk_final_price.corner == 00 ? "true" : "false"}}'>.{{item.zk_final_price.corner}}</text>
+                <text class='volumn'>{{item.volume}}件已售</text>
+              </view>
+            </view>
+          </view>
+        </block>
+      </scroll-view>
+      </swiper-item>
+      <swiper-item>
+      <scroll-view scroll-y="true" class="scoll-h" scroll-top="{{scrollTop}}" bindscrolltolower="lower" lower-threshold="0">
+        <block wx:for="{{goodsList3}}" wx:key="{{item}}">
+          <view class='product_child' catchtap='toGoodsDetail' data-id='{{item.id}}'>
+            <image src='http:{{item.pict_url}}'></image>
+            <view class='product_name'>
+              <text class='name_text break'>{{item.title}}</text>
+              <view style="margin: 15rpx 0;">
+                <text class="juan_style">
+               <text class="juan_style_left">券</text>
+                <text class="juan_style_right">{{item.coupon_number}}元</text>
+                </text>
+                <text class="return_num_style" wx:if="{{item.fans_acer!=='0'}}">返{{item.fans_acer}}元宝</text>
+              </view>
+              <view>
+                <text class='price'>￥</text>
+                <text class='rmb'>{{item.zk_final_price.rmb}}</text>
+                <text class='corner' hidden='{{item.zk_final_price.corner == 00 ? "true" : "false"}}'>.{{item.zk_final_price.corner}}</text>
+                <text class='volumn'>{{item.volume}}件已售</text>
+              </view>
+            </view>
+          </view>
+        </block>
+      </scroll-view>
+      </swiper-item>
+      <swiper-item>
+      <scroll-view scroll-y="true" class="scoll-h" scroll-top="{{scrollTop}}" bindscrolltolower="lower" lower-threshold="0">
+        <block wx:for="{{goodsList4}}" wx:key="{{item}}">
+          <view class='product_child'>
+            <image src='http:{{item.pict_url}}'></image>
+            <view class='product_name'>
+              <text class='name_text break'>{{item.title}}</text>
+              <view style="margin: 15rpx 0;">
+                <text class="juan_style">
+               <text class="juan_style_left">券</text>
+                <text class="juan_style_right">{{item.coupon_number}}元</text>
+                </text>
+                <text class="return_num_style" wx:if="{{item.fans_acer!=='0'}}">返{{item.fans_acer}}元宝</text>
+              </view>
+              <view>
+                <text class='price'>￥</text>
+                <text class='rmb'>{{item.zk_final_price.rmb}}</text>
+                <text class='corner' hidden='{{item.zk_final_price.corner == 00 ? "true" : "false"}}'>.{{item.zk_final_price.corner}}</text>
+                <text class='volumn'>{{item.volume}}件已售</text>
+              </view>
+            </view>
+          </view>
+        </block>
+      </scroll-view>
+    </swiper-item>
+  </swiper>
+   <view class='goTop' catchtap='toTop'>
+    <image src='../../images/goTop.png'></image>
+  </view>
+ 
+</view>

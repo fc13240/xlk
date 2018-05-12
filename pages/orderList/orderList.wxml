@@ -1,0 +1,74 @@
+<!--pages/orderList/orderList.wxml-->
+<view class='orderList'>
+  <scroll-view scroll-x="true" class="tab-h" scroll-left="{{scrollLeft}}">
+    <view class="tab-item {{currentTab==0?'active':''}}" data-current="0" bindtap="swichNav">添加订单</view>
+    <view class="tab-item {{currentTab==1?'active':''}}" data-current="1" bindtap="swichNav">全部订单</view>
+    <view class="tab-item {{currentTab==2?'active':''}}" data-current="2" bindtap="swichNav">待返订单</view>
+    <view class="tab-item {{currentTab==3?'active':''}}" data-current="3" bindtap="swichNav">已返订单</view>
+  </scroll-view>
+  <form bindsubmit="formSubmit">
+    <swiper class="tab-content" current="{{currentTab}}" duration="300" bindchange="switchTab" style="height:{{winHeight}}rpx">
+      <swiper-item>
+        <scroll-view scroll-y="true" class="scoll-h" scroll-top="{{scrollTop}}">
+          <block>
+            <view class='order-num'>订单号
+              <input name='orderNum'></input>
+            </view>
+            <view class='describe'>
+              <image src='../../images/user/myOrder_header.png'></image>
+              <text class='des_title'>以下情况无法参与下单返元宝活动</text>
+              <view>
+                <text class='tip'>1.未使用本站淘口令或链接购买</text>
+                <text class='tip'>2.打开商品后没有直接下单</text>
+                <text class='tip'>3.同一个淘宝订单号提价多次</text>
+                <text class='tip'>注：本活动最终解释权归本平台所有，如有疑问请联系客服。</text>
+              </view>
+              <view class='des_title how'>如何找到返元宝订单号？</view>
+            </view>
+            <image src='../../images/user/detail2.png' class='des_picture' mode="widthFix"></image>
+          </block>
+        </scroll-view>
+      </swiper-item>
+      <swiper-item wx:for="{{[1,2,3]}}" wx:key="{{item}}" scroll-top="{{scrollTop}}" bindscrolltolower="lower" lower-threshold="0">
+        <scroll-view scroll-y="true" class="scoll-h">
+          <view class='empty' hidden='{{show}}'>
+            <image src='../../images/user/nothing_img.png'></image>
+            <view>暂时没有相关订单记录~</view>
+          </view>
+          <block wx:for="{{orderList}}" wx:key="*this">
+            <view class='list'>
+              <view class='list_order_num'>
+                <text style='color:#999;'>订单号：<text style='color:#333;'>{{item.order_num}}</text></text>
+                <text style='color:#ff425f;' wx:if="{{item.back_status=='1'}}">已返</text>
+                <text style='color:#ff425f;' wx:if="{{item.back_status=='2'}}">待返</text>
+                <text style='color:#ff425f;' wx:if="{{item.back_status=='3'}}">拒绝</text>
+              </view>
+              <view class='list_main'>
+                <!-- <view> -->
+                <image src='../../images/order_img.png' class='list_pic'></image>
+                <!-- </view> -->
+                <view class='list_main_des'>
+                  <view>
+                    <view class='list_return'>返{{item.back_acer}}元宝</view>
+                    <view class='list_date'>日期：{{item.create_time}}</view>
+                  </view>
+                  <view class='btn' catchtap='toShare' data-num="{{item.order_num}}">去晒单</view>
+                </view>
+
+              </view>
+            </view>
+          </block>
+        </scroll-view>
+      </swiper-item>
+    </swiper>
+    <view hidden='{{isShow}}'>
+      <view style='height:140rpx;'></view>
+      <view class='all_btn'>
+        <button formType="submit">确认提交</button>
+      </view>
+    </view>
+  </form>
+  <view class='goTop' catchtap='toTop' hidden='{{!isShow}}'>
+    <image src='../../images/goTop.png'></image>
+  </view>
+</view>

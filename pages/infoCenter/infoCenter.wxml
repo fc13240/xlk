@@ -1,0 +1,17 @@
+<!--pages/infoCenter/infoCenter.wxml-->
+<view class='infoCenter'>
+  <view class='list' wx:for="{{messageList}}" wx:key="item">
+    <image src='../../images/user/notice.png' class='icon'></image>
+    <view class='right'>
+      <view class='list_top_right'>
+        <view class='list_top_title'>{{item.title}}</view>
+        <view class='list_top_date'>{{item.add_time}}</view>
+      </view>
+      <view class='list_bottom'>{{item.msg}}</view>
+    </view>
+  </view>
+  <view class='empty' hidden='{{showMessage}}'>您还没有收到任何通知呢</view>
+  <view class='all_btn'>
+    <button bindtap="clearMessage">清空</button>
+  </view>
+</view>

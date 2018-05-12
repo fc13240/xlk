@@ -1,0 +1,20 @@
+<!--pages/feedback/feedback.wxml-->
+<view class='feedback'>
+  <form bindsubmit='formSubmit'>
+    <view class='title'>反馈内容
+      <text>*</text>
+    </view>
+    <view class="section">
+      <textarea bindblur="bindTextAreaBlur" name='msg' placeholder="请填写您的建议" value='{{msg}}' />
+    </view>
+    <view class='title'>手机号码
+      <text>*</text>
+    </view>
+    <view class="section">
+      <input maxlength="11" name='telephone' placeholder="请填写您的手机号" type="number" value='{{telephone}}' />
+    </view>
+    <view class='all_btn'>
+      <button formType="submit">提交</button>
+    </view>
+  </form>
+</view>

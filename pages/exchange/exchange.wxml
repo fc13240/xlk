@@ -1,0 +1,82 @@
+<!--pages/exchange/exchange.wxml-->
+<form onsubmit='formSubmit'>
+  <view class='exchange'>
+    <view class='goods'>
+      <view class='des'>
+        <view class='des_main'>
+          <view>
+            <image src='{{productInfo.product_image}}' class='goods_img'></image>
+          </view>
+          <view>
+            <view class='goods_name'>{{productInfo.product_name}}</view>
+            <view>
+              <text class='goods_acer'>{{productInfo.exchange_acer}}</text>
+              <image src='../../images/index/acer_red.png' class='icon'></image>
+              <text wx:if='{{productInfo.market_price.corner == 00}}' class='goods_old_p'>￥{{productInfo.market_price.rmb}}</text>
+              <text wx:else class='goods_old_p'>￥{{productInfo.market_price.rmb}}.￥{{productInfo.market_price.corner}}</text>
+            </view>
+          </view>
+        </view>
+        <view class='tip'>剩余
+          <text>{{productInfo.stock}}</text> 件</view>
+      </view>
+      <view class='setNum_main'>
+        <view class='setNum_title'>请输入兑换数量</view>
+        <view class='setNum'>
+          <view class='btn' catchtap='reduce'>-</view>
+          <view style='width:100rpx;'>
+            <input style='height:100%;min-height:38rpx;font-size:24rpx;text-align:center;' type='number' name='exchange_number' value='{{num}}'></input>
+          </view>
+          <view class='btn' catchtap='add'>+</view>
+        </view>
+      </view>
+      <view class='userInfo'>
+        <view hidden='{{telShow}}'>
+          <view class='setNum_title'>请输入您要充值的手机号</view>
+          <input class='tel' name='telephone' type="number" maxlenght='11'></input>
+        </view>
+        <view hidden='{{aliShow}}'>
+          <view class='setNum_title'>请输入您要提现的支付宝账号</view>
+          <view style='display:flex;margin:30rpx 0 10rpx;'>
+            <image src='../../images/alipay_img.png' style='width:138rpx;height:48rpx;'></image>
+            <input class='tel' name='alipay' style='margin:0 0 0 20rpx;'></input>
+          </view>
+        </view>
+        <view hidden='{{addressShow}}'>
+          <view  style='display:flex;justify-content: space-between;align-items: center;'>
+            <view style='font-size:28rpx;color:#333;'>配送至：</view>
+            <view data-id='{{productInfo.product_id}}' style='display:flex;align-items: center;height:60rpx;' catchtap='toAddressList'>
+              <view style='font-size:24rpx;color:#999;'>修改地址</view>
+              <image src='../../images/gt_white.png' style='width:24rpx;height:24rpx;margin:4rpx 0 0 10rpx;'></image>
+            </view>
+          </view>
+          <view class='address'>
+            <view class='default'>默认</view>
+            <view>
+              <view class='site' wx:if='{{defaultAddress.length !== 0}}'>{{defaultAddress.province}}，{{defaultAddress.country}}，{{defaultAddress.district}}{{defaultAddress.address}}</view>
+              <view style='color:#999;'>{{defaultAddress.person_name}} {{defaultAddress.telephone}}</view>
+              <input hidden='true' name='address_id' value='{{defaultAddress.address_id}}' />
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class='direction'>
+      <view class='title'>兑换说明：</view>
+      <view class='brief'>{{productInfo.exchange_brief}}</view>
+      <view class='title'>{{productInfo.content}}</view>
+      <view class='name'>{{productInfo.product_name}}</view>
+      <view wx:for='{{productInfo.small_images}}' wx:key='index'>
+        <image src='{{item.image}}' style="width:100%;margin-top:20rpx;" mode="widthFix"></image>
+      </view>
+    </view>
+    <view>
+
+
+    </view>
+    <view style='height:140rpx;'></view>
+    <view class='all_btn'>
+      <button formType="submit" >立刻兑换</button>
+    </view>
+  </view>
+</form>

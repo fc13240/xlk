@@ -1,0 +1,91 @@
+/* pages/shareList/shareList.wxss */
+.tab-h {
+  height: 80rpx;
+  width: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
+  line-height: 80rpx;
+  background: rgb(255, 66, 95);
+  font-size: 14px;
+  white-space: nowrap;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 99;
+  border-bottom: 1rpx solid #e1e1e1;
+}
+
+.tab-item {
+   display: inline-block; 
+   color: white;
+  width: calc(100%/2);
+  text-align: center
+
+}
+.tab-item image{
+  width: 36rpx;
+    height: 36rpx;
+    vertical-align: middle;
+    margin-right: 15rpx;
+}
+
+.tab-item.active {
+  position: relative;
+}
+
+.tab-item.active:after {
+  content: "";
+  display: block;
+  height: 8rpx;
+  width: 190rpx;
+  background: rgb(255, 164, 164);
+  position: absolute;
+  bottom: 0;
+  left: calc((100% - 190rpx)/2);
+  border-radius: 16rpx;
+}
+.tab-content {
+  margin-top: 80rpx;
+}
+
+.scoll-h {
+  height: 100%;
+}
+.list{
+  padding: 22rpx;
+  background-color: white;
+  margin-bottom: 8rpx;
+}
+.imgList image{
+  width: 228rpx;
+  height: 228rpx;
+  margin-right: 6rpx;
+}
+.list .time{
+  font-size: 20rpx;
+    color: #d1d1d1;
+}
+.list .des{
+  font-size: 28rpx;
+    color: #666;
+    line-height: 35rpx;
+}
+.imgList{
+    margin-top: 24rpx;
+    font-size: 0;
+}
+.pic{
+  width: 72rpx;
+  height: 72rpx;
+  border-radius: 50%;
+  margin-right: 10rpx;
+}
+.name{
+  font-size:28rpx;
+  color: #333;
+  margin-bottom:10rpx;
+}
+.user_info{
+  display: flex;
+
+}

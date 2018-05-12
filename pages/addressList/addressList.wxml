@@ -1,0 +1,27 @@
+<!--pages/addressList/addressList.wxml-->
+<view class='addressList'>
+  <view>
+  <view wx:if="{{addressList.length=='0' && chooseShow}}" class='empty'>请到个人中心设置收货地址</view>
+    <view wx:for='{{addressList}}' class='list' wx:key='{{item}}'>
+      <view class='list_des'>
+        <text class='name'>{{item.person_name}}</text>
+        <text class='tell'>{{item.telephone}}</text>
+        <view class='address'>{{item.province}}{{item.country}}{{item.district}}{{item.address}}</view>
+      </view>
+      <view class='setting'>
+        <label wx:if='{{chooseShow}}' class="radio" data-id='{{item.address_id}}' catchtap='chooseAddress'>
+          <radio checked="checked" color='#c4c4c4' />使用 </label>
+        <label wx:elif='{{item.is_default == 1}}' class="radio">
+          <radio checked="checked" color='#ff425f' />默认地址 </label>
+        <label wx:elif='{{item.is_default == 2}}' class="radio" data-id='{{item.address_id}}' catchtap='setDefault'>
+          <radio checked='false' color='#c4c4c4' />设为默认
+        </label>
+        <text wx:if='{{!chooseShow}}' data-id='{{item.address_id}}' catchtap='delAddress'>删除</text>
+        <text wx:if='{{!chooseShow}}' data-id='{{item.address_id}}' catchtap='toEdit'>编辑</text>
+      </view>
+    </view>
+  </view>
+  <view hidden='{{chooseShow}}' class='all_btn'>
+    <button bindtap="toAddress">添加地址</button>
+  </view>
+</view>

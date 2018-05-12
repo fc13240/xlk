@@ -1,0 +1,56 @@
+/* pages/fanswefare/fanswefare.wxss */
+.fanswefare{
+   width: 100%;
+  font-size: 0;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  overflow: scroll;
+}
+.nav{
+  width: 100%;
+  height: 180rpx;
+}
+.tab-h {
+  height: 80rpx;
+  width: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
+  line-height: 80rpx;
+  background: white;
+  font-size: 14px;
+  white-space: nowrap;
+  border-bottom: 1rpx solid #e1e1e1;
+}
+
+.tab-item {
+   display: inline-block; 
+  color: #666;
+  width: calc(100%/4);
+  text-align: center;
+}
+
+.tab-item.active {
+  color: #ff425f;
+  position: relative;
+}
+
+.tab-item.active:after {
+  content: "";
+  display: block;
+  height: 8rpx;
+  width: 124rpx;
+  background: #ff425f;
+  position: absolute;
+  bottom: 0;
+  left: calc((100% - 124rpx)/2);
+  border-radius: 16rpx;
+}
+.tab-content{
+  /* margin-top: 260rpx; */
+  height: 100%;
+}
+.scoll-h{
+  overflow: scroll;
+  height: 100%;
+}

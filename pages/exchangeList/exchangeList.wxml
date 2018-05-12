@@ -1,0 +1,36 @@
+<!--pages/exchangeList/exchangeList.wxml-->
+<view >
+    <scroll-view scroll-x="true" class="tab-h" scroll-left="{{scrollLeft}}">
+        <view class="tab-item {{currentTab==0?'active':''}}"  data-current="0" bindtap="swichNav">全部</view>
+        <view class="tab-item {{currentTab==1?'active':''}}" data-current="1" bindtap="swichNav">虚拟类</view>
+        <view class="tab-item {{currentTab==2?'active':''}}" data-current="2" bindtap="swichNav">实物类</view>
+    </scroll-view>
+    <swiper class="tab-content" current="{{currentTab}}" duration="300" bindchange="switchTab"
+     style="height:{{winHeight}}rpx">
+        <swiper-item wx:for="{{[0,1,2]}}" wx:key="{{item}}">
+            <scroll-view scroll-y="true" class="scoll-h" >
+            <view class='tip'>
+            <text>累计为您成功免单{{freeMoney}}元</text>
+            </view>
+                 
+                <block wx:for="{{exchangeList}}" wx:key="*this">
+                    <view class="item-ans">
+                        <view class="avatar">
+                            <image class="img" src="{{item.product_image}}"></image>
+                        </view>
+                        <view class="expertInfo">
+                            <view class="name">{{item.product_name}}</view>
+                            <view class='ex_num'>x{{item.exchange_num}}</view>
+                            <view class='date'>日期：{{item.exchange_time}}</view>
+                        </view>
+                        <view wx:if='{{item.express_status == 1}}' class="askBtn">未发货</view>
+                        <view wx:elif='{{item.express_status == 2}}'  class='askBtn'>已发货</view> 
+                    </view>
+                </block>
+            </scroll-view>
+        </swiper-item>
+    </swiper>
+    <view class='goTop' catchtap='toTop'>
+      <image src='../../images/goTop.png'></image>
+    </view>
+</view>

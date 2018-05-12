@@ -1,0 +1,27 @@
+<!--pages/editAddress/editAddress.wxml-->
+<view class='editAddress'>
+  <form bindsubmit='formSubmit'>
+    <view class='main'>
+      <view>姓名
+        <input name='person_name' value='{{addressInfo.person_name}}'></input>
+      </view>
+      <view>手机号码
+        <input name='telephone' value='{{addressInfo.telephone}}' type='number' maxlength='11'></input>
+      </view>
+      <view class="section">
+        <view class="section__title">所在地区</view>
+        <picker mode="region" name='province' bindchange="bindRegionChange" value='{{addressArray}}' >
+          <view class="picker">
+            {{addressArray}}
+          </view>
+        </picker>
+      </view>
+      <view style='min-height:300rpx;'>
+        <textarea bindblur="bindTextAreaBlur" name='address' auto-height placeholder="详细地址" value='{{addressInfo.address}}' />
+      </view>
+    </view>
+    <view class='all_btn'>
+      <button formType='submit'>保存</button>
+    </view>
+  </form>
+</view>

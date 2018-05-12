@@ -1,0 +1,155 @@
+/* pages/orderList/orderList.wxss */
+.orderList{
+  width: 100%;
+  height: 100%;
+position: fixed;
+  top: 0;
+}
+.tab-h {
+  height: 80rpx;
+  width: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
+  line-height: 80rpx;
+  background: white;
+  font-size: 14px;
+  white-space: nowrap;
+  left: 0;
+  border-bottom: 1rpx solid #e1e1e1;
+  border-top: 1rpx solid #e1e1e1;
+}
+
+.tab-item {
+   display: inline-block; 
+  color: #666;
+  width: calc(100%/4);
+  text-align: center
+
+}
+
+.tab-item.active {
+  color: #ff425f;
+  position: relative;
+}
+
+.tab-item.active:after {
+  content: "";
+  display: block;
+  height: 8rpx;
+  width: 120rpx;
+  background: #ff425f;
+  position: absolute;
+  bottom: 0;
+  left: calc((100% - 120rpx)/2);
+  border-radius: 16rpx;
+}
+.tab-content {
+  /* margin-top: 80rpx; */
+  background: white;
+}
+
+.scoll-h {
+  height: 100%;
+  overflow: scroll;
+}
+.order-num{
+  padding: 40rpx 50rpx;
+  font-size: 32rpx;
+  color: rgb(51, 51, 51);
+  border-bottom: 16rpx solid rgb(244, 244, 244);
+}
+.order-num input{
+  display: inline-block;
+  border-bottom: 1rpx solid rgb(244, 244, 244);
+  margin-bottom: -14rpx;
+  margin-left: 40rpx;
+}
+.describe{
+  padding: 20rpx 34rpx 0;
+}
+.describe image{
+  width: 100%;
+  height: 180rpx;
+}
+.tip{
+  font-size: 22rpx;
+    color: rgb(153, 153, 153);
+    margin: 10rpx 0rpx 10rpx 15rpx;
+    margin-left: 15rpx;
+    display: block;
+}
+.des_title{
+  padding: 2rpx 0 15rpx;
+    font-size: 24rpx;
+    color: rgb(51, 51, 51);
+}
+.how{
+  border-bottom: 1rpx solid rgb(244, 244, 244);
+  padding: 10rpx 0 20rpx;
+}
+.des_picture{
+  width: 100%;
+}
+.empty{
+  width: 100%;
+  text-align: center;
+  padding: 100rpx 0px;
+}
+.empty image{
+  width: 152rpx;
+  height: 140rpx;
+}
+.empty view{
+  font-size: 28rpx;
+  color: rgb(102, 102, 102);
+}
+.list{
+  border-bottom: 16rpx solid #f4f4f4;
+}
+.list_order_num{
+  font-size:24rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20rpx 70rpx 15rpx 36rpx;
+}
+.list_main{
+  padding: 0 36rpx 30rpx;
+  display: flex;
+  align-items: center;
+}
+.list_pic{
+  width: 80rpx;
+  height: 80rpx;
+}
+.list_date{
+  font-size: 20rpx;
+  color: #999;
+  margin-top:25rpx;
+}
+.list_return{
+  color: #ff425f;
+  border:1rpx solid #ff425f;
+  font-size: 20rpx;
+  display: inline-block;
+  border-radius: 5rpx;
+  padding: 0 10rpx;
+}
+.list_main_des{
+  width: calc(100% - 100rpx);
+  display: flex;
+  justify-content: space-between;
+  margin-left: 20rpx;
+  align-items: center;
+}
+.btn{
+  font-size: 24rpx;
+  color: #ff425f;
+  border: 1rpx solid #ff425f;
+  border-radius: 50rpx;
+  width: 120rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+  text-align: center;
+  vertical-align: middle;
+}

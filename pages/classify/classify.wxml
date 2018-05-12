@@ -1,0 +1,25 @@
+<!--pages/classify/classify.wxml-->
+<view class="container">
+   <view class='product'>
+    <view class='product_child' wx:for="{{goods}}" wx:key='{{item}}' data-id='{{item.id}}' data-type='' catchtap="toGoodsDetail">
+      <image src='http:{{item.pict_url}}'></image>
+      <view class='product_name'>
+        <text class='name_text break'>{{item.title}}</text>
+        <view style="margin: 15rpx 0;">
+            <text class="juan_style">
+               <text class="juan_style_left">券</text>
+               <text class="juan_style_right">{{item.coupon_number}}元</text>
+            </text>
+            <text class="return_num_style" wx:if="{{item.fans_acer!==0}}">返{{item.fans_acer}}元宝</text>
+        </view>
+        <view>
+           <text class='price'>￥</text><text class='rmb'>{{item.zk_final_price.rmb}}</text><text class='corner' wx:if="{{item.zk_final_price.corner!=='00'}}">.{{item.zk_final_price.corner}}</text>
+           <text class='volumn'>{{item.volume}}件已售</text>
+        </view>
+      </view>
+    </view>
+  </view>
+   <view class='goTop' catchtap='toTop'>
+     <image src='../../images/goTop.png'></image>
+  </view>
+</view>

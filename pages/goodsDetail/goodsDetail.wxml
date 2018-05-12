@@ -1,0 +1,99 @@
+<!--pages/goodsDeatail/goodsDetail.wxml-->
+<view class='goodsDetail'>
+  <view class='detail'>
+    <image src='http:{{goodsDetail.pict_url}}' class='picture'></image>
+    <view class='detail_des'>
+      <text class='goods_name break'>{{goodsDetail.title}}</text>
+      <view>
+        <text class='goods_price'>￥<text style='font-size:60rpx;'>{{goodsDetail.zk_final_price.rmb}}</text>
+        <text wx:if='{{goodsDetail.zk_final_price.corner != 00}}'>.{{goodsDetail.zk_final_price.corner}}</text>
+        </text>
+        <text style="margin: 15rpx 0;">
+          <text class="juan_style">
+               <text class="juan_style_left">券</text>
+        <text class="juan_style_right">{{goodsDetail.coupon_number}}元</text>
+        </text>
+        <text wx:if='{{goodsDetail.fans_acer}}' class="return_num_style">返{{goodsDetail.fans_acer}}元宝</text>
+        </text>
+      </view>
+      <view style="font-size:24rpx; color:#999;margin-top:10rpx;">
+        <text wx:if='{{goodsDetail.reserve_price.corner == 00}}'>价格<text style='text-decoration: line-through;margin-right:30rpx;'>￥{{goodsDetail.reserve_price.rmb}}</text></text>
+
+        <text wx:else>价格<text style='text-decoration: line-through;margin-right:30rpx;'>￥{{goodsDetail.reserve_price.rmb}}.{{goodsDetail.reserve_price.corner}}</text></text>
+        <text>销量{{goodsDetail.volume}}件</text>
+      </view>
+
+
+
+    </view>
+    <view class='des'>
+      <view class='des_title' catchtap='click'>商品图文详情（点击查看）
+        <image src='../../images/gt_white.png' class='gt' hidden='{{show}}'></image>
+        <image src='../../images/top.png' class='gt' hidden='{{!show}}'></image>
+      </view>
+      <view style='font-size:0;' hidden='{{!show}}'>
+        <image src='{{item}}' wx:for="{{goodsDetail.small_images}}" class='des_picture' mode="widthFix" wx:key="{{list}}"></image>
+      </view>
+    </view>
+  </view>
+  <view class='title'>
+    <view style='border-left:6rpx solid #ff425f;padding-left:20rpx;'>
+      <text>猜你喜欢</text>
+    </view>
+  </view>
+  <view class='product'>
+
+    <view wx:for="{{likeList}}" wx:key='index' class='product_child' data-id='{{item.id}}'  catchtap="toDetail">
+      <image src='http:{{item.pict_url}}'></image>
+      <view class='product_name'>
+        <text class='name_text break'>{{item.title}}</text>
+        <view style="margin: 15rpx 0;">
+          <text class="juan_style">
+               <text class="juan_style_left">券</text>
+          <text class="juan_style_right">{{item.coupon_number}}元</text>
+          </text>
+          <!-- <text class="return_num_style">返{{item.fans_acer}}元宝</text> -->
+        </view>
+        <view>
+          <text class='price'>￥</text>
+          <text class='rmb'>{{item.zk_final_price.rmb}}</text>
+          <text hidden='{{item.zk_final_price.corner == 0 ? true:""}}' class='corner'>.{{item.zk_final_price.corner}}</text>
+          <text class='volumn'>{{item.volume}}件已售</text>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view style='height:98rpx;'></view>
+  <view class='footer'>
+    <view class='tab1 tab' catchtap='toHome'>
+      <image src='../../images/index/home2.png'></image>
+      <view>首页</view>
+    </view>
+    <view class='tab2 tab' catchtap='service'>
+      <image src='../../images/index/service.png'></image>
+      <view>客服</view>
+    </view>
+    <view class='tab tab4' data-click_url='{{goodsDetail.click_url}}' data-pict_url='{{goodsDetail.pict_url}}' data-title='{{goodsDetail.title}}' catchtap='showJuan'>
+      <view>淘口令领劵</view>
+    </view>
+  </view>
+  <view class="model" hidden='{{showJuan}}'>
+    <view class="model_bd">
+    </view>
+    <view class="model_main">
+      <view class="model_main_des">
+        <view class="model_title">淘口令购买</view>
+        <input type="text" class="word" id="kouling" value='{{command}}' disabled='true'></input>
+        <view class="des">在点击复制后，打开淘宝APP购买</view>
+        <view class="des">若一键复制失败，请长按虚线内文字</view>
+        <button class="m_btn" bindtap='copyCommand'> 一键复制</button>
+      </view>
+      <image src="../../images/user/cancel_img.png" alt="" catchtap='closeJuan'></image>
+    </view>
+  </view>
+  <view class="model" hidden='{{showService}}'>
+    <view class="model_bd"></view>
+    <image src="{{ewm}}" alt="" class="model_main rq"></image>
+    <image src="../../images/user/cancel_img.png" alt="" class="cancel" catchtap='close'></image>
+  </view>
+</view>

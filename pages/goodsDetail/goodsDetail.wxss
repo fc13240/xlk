@@ -1,0 +1,201 @@
+/* pages/goodsDeatail/goodsDetail.wxss */
+.goodsDetail{
+  font-size: 0;
+}
+.detail .picture{
+   width: 100%;
+   height: 750rpx;
+}
+.detail .goods_name{
+  font-size: 32rpx;
+    color: #333;
+}
+.detail_des{
+  background: #fff;
+    padding: 22rpx 22rpx 30rpx;
+}
+.goods_price{
+  color: #ff425f;
+  font-size: 36rpx;
+  margin-right: 20rpx;
+  
+}
+.des{
+  font-size: 28rpx;
+  color: #333;
+  background: white;
+  margin-top: 16rpx;
+}
+.des_title{
+  padding: 20rpx 15rpx;
+   position: relative;
+  border-bottom: 1rpx solid #f4f4f4;
+}
+.gt{
+  width: 20rpx;
+  height: 20rpx;
+  position: absolute;
+  right: 20rpx;
+  top: 30rpx;
+}
+.des_picture{
+  width: 100%;
+}
+.title {
+  font-size: 32rpx;
+  background: white;
+  color: #333;
+  padding: 20rpx 0;
+  font-weight: 500;
+}
+.footer{
+  font-size: 20rpx;
+  color: #444;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 98rpx;
+  z-index: 999;
+  background: white;
+   display: flex;
+  justify-content: centr;
+  align-items: center;
+  border-top: 1rpx solid #e5e5e5;
+  
+}
+.tab1{
+  border-right: 1rpx solid #eee;
+    box-sizing: border-box;
+}
+.tab1,.tab2{
+  width: 25%;
+  text-align: center;
+}
+.tab4{
+  width: 50%;
+   font-size: 28rpx;
+    height: 100%; 
+     display: flex;
+  justify-content: centr;
+  align-items: center;
+  color: white;
+}
+.tab4 view{
+  width: 100%;
+  text-align: center;
+}
+.tab4{
+  background: -webkit-linear-gradient(left, #ff526d, #f8214f); /* Safari 5.1 - 6.0 */
+    background: -o-linear-gradient(left, #ff526d, #f8214f); /* Opera 11.1 - 12.0 */
+    background: -moz-linear-gradient(left, #ff526d, #f8214f); /* Firefox 3.6 - 15 */
+    background: linear-gradient(left, #ff526d, #f8214f); /* 标准的语法 */
+}
+.footer image{
+  width: 40rpx;
+  height: 40rpx;
+}
+
+
+
+
+/*弹出层*/
+  .model_bd {
+    width: 100%;
+    height: 100%;
+    opacity: .5;
+    background-color: black;
+    position: fixed;
+    top: 0;
+    z-index: 9999;
+  }
+
+  .model_main {
+    z-index: 99999;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 598rpx;
+    height: 364rpx;
+    margin: 250rpx calc((100% - 598rpx) / 2);
+    background-color: white;
+    border-radius: 15rpx;
+  }
+
+  .model_main_des {
+    position: absolute;
+    text-align: center;
+    width: 100%;
+  }
+
+  .model_main_des > .des {
+    font-size: 20rpx;
+    color: #666666;
+    margin: 0 16rpx;
+    line-height: 40rpx;
+    height: 40rpx;
+  }
+
+  .m_btn {
+    display: inline-block;
+    font-size: 26rpx;
+    color: white;
+    width: 464rpx;
+    line-height: 68rpx;
+    border-radius: 80rpx;
+    border: none;
+    background: -webkit-linear-gradient(left, #ff526d, #f8214f); /* Safari 5.1 - 6.0 */
+    background: -o-linear-gradient(left, #ff526d, #f8214f); /* Opera 11.1 - 12.0 */
+    background: -moz-linear-gradient(left, #ff526d, #f8214f); /* Firefox 3.6 - 15 */
+    background: linear-gradient(left, #ff526d, #f8214f); /* 标准的语法 */
+    margin: 10rpx 0;
+  }
+
+  .model_main image {
+    width: 50rpx;
+    height: 50rpx;
+    position: absolute;
+    top: -70rpx;
+    right: -60rpx;
+  }
+
+  .model_title {
+    color: white;
+    font-size: 32rpx;
+    text-align: center;
+    line-height: 72rpx;
+    border-radius: 15rpx 15rpx 0 0;
+    background: -webkit-linear-gradient(left, #ff526d, #f8214f); /* Safari 5.1 - 6.0 */
+    background: -o-linear-gradient(left, #ff526d, #f8214f); /* Opera 11.1 - 12.0 */
+    background: -moz-linear-gradient(left, #ff526d, #f8214f); /* Firefox 3.6 - 15 */
+    background: linear-gradient(left, #ff526d, #f8214f); /* 标准的语法 */
+  }
+
+  .word {
+    width: 450rpx;
+    -webkit-appearance: none;
+    -webkit-tap-highlight-color: rgba(255, 0, 0, 0);
+    border: 1rpx dotted #ff425f;
+    text-align: center;
+    background-color: #ffe7eb;
+    font-size: 32rpx;
+    color: #666666;
+    margin: 10rpx auto;
+    border-radius: 10rpx;
+    height: 90rpx;
+  }
+
+  .rq {
+    width: 320rpx;
+    height: 320rpx;
+    margin: calc((100% - 320rpx) / 2) calc((100% - 320rpx) / 2);
+  }
+
+  .cancel {
+    width: 50rpx;
+    height: 50rpx;
+    position: fixed;
+    right: calc(((100% - 320rpx) / 2) - 50rpx);
+    top: calc(((100% - 320rpx) / 2) - 300rpx);
+    z-index: 999999;
+  }

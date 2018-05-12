@@ -1,0 +1,50 @@
+/* pages/addressList/addressList.wxss */
+.list{
+  background: white;
+}
+.list_des{
+  padding: 30rpx;
+  border-bottom: 1rpx solid #f4f4f4;
+}
+.name{
+  font-size: 28rpx;
+  color: rgb(51, 51, 51);
+}
+.tell{
+  font-size: 24rpx;
+  color: rgb(102, 102, 102);
+  float: right;
+  margin-top: 15rpx;
+}
+.address{
+  font-size: 24rpx;
+    color: rgb(102, 102, 102);
+    margin-top: 10rpx;
+}
+.setting{
+    color: rgb(51, 51, 51);
+    font-size: 24rpx;
+    padding: 25rpx;
+    margin-bottom: 10rpx;
+}
+ .setting radio .wx-radio-input{
+  width: 30rpx;
+  height: 30rpx;
+} 
+.setting text{
+  font-size: 24rpx;
+  border: 1rpx solid #c8c8cd;
+  float: right;
+  border-radius: 5rpx;
+  padding: 5rpx 10rpx;
+  margin-top: -5rpx;
+}
+.setting text:nth-child(odd){
+  margin-right:20rpx;
+}
+.empty{
+  font-size: 28rpx;
+  color: #333;
+  text-align: center;
+  margin: 200rpx auto; 
+}
